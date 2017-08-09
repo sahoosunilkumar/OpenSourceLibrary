@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:bind="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools">
+        <data>
+            <variable
+                name="loginViewModel"
+                type="com.sunilsahoo.poc.mvvm.login.LoginViewModel"/>
+            <import type="android.view.View"/>
+        </data>
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/title_login_msg"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/user_name"
+            android:text="@={loginViewModel.loginBean.userName}"
+            />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={loginViewModel.loginBean.password}"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:onClick="@{() -> loginViewModel.onLoginClick()}"
+            />
+
+
+        <Button
+            android:id="@+id/libtestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sample"
+            android:onClick="@{() -> loginViewModel.onLibTestClick()}"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{loginViewModel.showProgress? View.VISIBLE : View.GONE}"
+            />
+
+    </LinearLayout>
+</layout>

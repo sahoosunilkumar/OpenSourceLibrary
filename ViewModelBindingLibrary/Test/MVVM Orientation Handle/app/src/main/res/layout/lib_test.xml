@@ -1,0 +1,50 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="libTestViewModel"
+            type="com.sunilsahoo.poc.mvvm.libtest.LibTestViewModel"/>
+        <variable
+            name="userViewModel"
+            type="com.sunilsahoo.poc.mvvm.libtest.User"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_your_name"/>
+        <EditText
+            android:id="@+id/user_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_user_name"
+            android:text="@={userViewModel.name}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{libTestViewModel.onClickGreetButton}"
+            android:text="Greet"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{libTestViewModel.name != null &amp;&amp; !libTestViewModel.name.empty ? @string/hello(libTestViewModel.name) : ``}"
+            tools:text="@string/hello"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{libTestViewModel.onClickedShowDialogFragmentButton}"
+            android:text="@string/button_dialog_fragment"/>
+    </LinearLayout>
+</layout>

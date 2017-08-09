@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ViewModelBinding.iml" filepath="$PROJECT_DIR$/ViewModelBinding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewmodelbinding/viewmodelbinding.iml" filepath="$PROJECT_DIR$/viewmodelbinding/viewmodelbinding.iml" />
+    </modules>
+  </component>
+</project>

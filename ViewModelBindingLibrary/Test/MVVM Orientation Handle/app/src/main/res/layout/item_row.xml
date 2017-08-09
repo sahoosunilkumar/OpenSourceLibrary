@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="item" type="com.sunilsahoo.poc.mvvm.favorite.Item" />
+    </data>
+
+<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name"
+        android:textColor="@color/title"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{item.name}"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_below="@id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@{item.price}"/>
+
+    <TextView
+        android:id="@+id/offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_alignParentRight="true"
+        android:text="@{item.offer}"/>
+
+</RelativeLayout>
+    </layout>
